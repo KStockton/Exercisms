@@ -5,16 +5,28 @@
 
 export class Triangle {
   constructor(a, b, c) {
-    this.sideA = a
-    this.sideB = b
-    this.sideC = c
+    this.a = a
+    this.b = b
+    this.c = c
   }
 
   kind() {
-    if(this.sideA === this.sideB && this.sideA === this.sideC){
+    const { a, b, c } = this
+
+    if(a <= 0 || b <= 0 || c <= 0 ){
+      throw new Error()
+    }
+
+    if(a + b <= c || b + c <= a || c + a <= b){
+      throw new Error
+    }
+
+    if(a === b && a === c){
       return 'equilateral';
-    } else if(this.sideA !== this.sideB && this.sideC === this.sideA || this.sideA === this.sideB && this.sideA !== this.sideC){
+    } 
+    if(a === b  || b === c  || a === c ){
       return 'isosceles';
     }
+    return 'scalene'
   }
 }
