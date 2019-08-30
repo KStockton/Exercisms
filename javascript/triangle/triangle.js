@@ -4,11 +4,17 @@
 //
 
 export class Triangle {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(a, b, c) {
+    this.sideA = a
+    this.sideB = b
+    this.sideC = c
   }
 
   kind() {
-    throw new Error("Remove this statement and implement this function");
+    if(this.sideA === this.sideB && this.sideA === this.sideC){
+      return 'equilateral';
+    } else if(this.sideA !== this.sideB && this.sideC === this.sideA || this.sideA === this.sideB && this.sideA !== this.sideC){
+      return 'isosceles';
+    }
   }
 }
