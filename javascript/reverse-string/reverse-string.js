@@ -5,7 +5,6 @@
 
 export const reverseString = (str) => {
   return [...str].reduce((word, letter) => {
-
     return letter += word
   },'')
 };
