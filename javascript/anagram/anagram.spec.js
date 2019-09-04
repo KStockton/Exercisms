@@ -58,28 +58,28 @@ describe('Anagram', () => {
     expect(matches).toEqual(['carthorse']);
   });
 
-  xtest('detects anagrams using case-insensitive possible matches', () => {
+  test('detects anagrams using case-insensitive possible matches', () => {
     const subject = new Anagram('orchestra');
     const matches = subject.matches(['cashregister', 'Carthorse', 'radishes']);
 
     expect(matches).toEqual(['Carthorse']);
   });
 
-  xtest('does not detect a anagram if the original word is repeated', () => {
+  test('does not detect a anagram if the original word is repeated', () => {
     const subject = new Anagram('go');
     const matches = subject.matches(['go Go GO']);
 
     expect(matches).toEqual([]);
   });
 
-  xtest('anagrams must use all letters exactly once', () => {
+  test('anagrams must use all letters exactly once', () => {
     const subject = new Anagram('tapper');
     const matches = subject.matches(['patter']);
 
     expect(matches).toEqual([]);
   });
 
-  xtest('words are not anagrams of themselves (case-insensitive)', () => {
+  test('words are not anagrams of themselves (case-insensitive)', () => {
     const subject = new Anagram('BANANA');
     const matches = subject.matches(['BANANA', 'Banana', 'banana']);
 

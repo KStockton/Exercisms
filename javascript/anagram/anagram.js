@@ -17,7 +17,7 @@ export class Anagram {
 
    for(let words of arr){
      //clean string and compare
-    if(this.cleanString(str) === this.cleanString(words)){
+    if(this.cleanString(str) === this.cleanString(words) && str.toLowerCase() !== words.toLowerCase()){
       //pushes word to returned array
       matchTest.push(words)
     }
