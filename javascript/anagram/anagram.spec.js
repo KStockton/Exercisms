@@ -30,28 +30,28 @@ describe('Anagram', () => {
     expect(matches).toEqual(['inlets']);
   });
 
-  xtest('detects three anagrams', () => {
+  test('detects three anagrams', () => {
     const subject = new Anagram('allergy');
     const matches = subject.matches(['gallery', 'ballerina', 'regally', 'clergy', 'largely', 'leading']);
 
     expect(matches).toEqual(['gallery', 'regally', 'largely']);
   });
 
-  xtest('does not detect non-anagrams with identical checksum', () => {
+  test('does not detect non-anagrams with identical checksum', () => {
     const subject = new Anagram('mass');
     const matches = subject.matches(['last']);
 
     expect(matches).toEqual([]);
   });
 
-  xtest('detects anagrams case-insensitively', () => {
+  test('detects anagrams case-insensitively', () => {
     const subject = new Anagram('Orchestra');
     const matches = subject.matches(['cashregister', 'Carthorse', 'radishes']);
 
     expect(matches).toEqual(['Carthorse']);
   });
 
-  xtest('detects anagrams using case-insensitive subject', () => {
+  test('detects anagrams using case-insensitive subject', () => {
     const subject = new Anagram('Orchestra');
     const matches = subject.matches(['cashregister', 'carthorse', 'radishes']);
 

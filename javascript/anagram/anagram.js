@@ -18,10 +18,11 @@ export class Anagram {
    for(let words of arr){
      //clean string and compare
     if(this.cleanString(str) === this.cleanString(words)){
-      //
+      //pushes word to returned array
       matchTest.push(words)
     }
   }
+  //return the result
     return matchTest
   }
   
