@@ -15,14 +15,15 @@ describe('Anagram', () => {
     expect(matches).toEqual(['stream', 'maters']);
   });
 
-  xtest('does not detect anagram subsets', () => {
+  
+  test('does not detect anagram subsets', () => {
     const subject = new Anagram('good');
     const matches = subject.matches(['dog', 'goody']);
 
     expect(matches).toEqual([]);
   });
 
-  xtest('detects anagram', () => {
+  test('detects anagram', () => {
     const subject = new Anagram('listen');
     const matches = subject.matches(['enlists', 'google', 'inlets', 'banana']);
 

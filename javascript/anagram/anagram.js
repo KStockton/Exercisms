@@ -9,11 +9,16 @@ export class Anagram {
   }
 
   matches(arr) {
+    // destructure this
     const { str } = this
-    let matchTest = []
+    // setup a empty array for later return
+    const matchTest = []
+    // Itterate through the array of possible matches
 
    for(let words of arr){
+     //clean string and compare
     if(this.cleanString(str) === this.cleanString(words)){
+      //
       matchTest.push(words)
     }
   }
